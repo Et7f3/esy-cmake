@@ -89,11 +89,13 @@ cmake_sphinx_flags=""
 
 # Determine whether this is a Cygwin environment.
 if echo "${cmake_system}" | grep CYGWIN >/dev/null 2>&1; then
-  cmake_system_cygwin=true
-  cmake_doc_dir_keyword="CYGWIN"
-  cmake_man_dir_keyword="CYGWIN"
+#  cmake_system_cygwin=true
+#  cmake_doc_dir_keyword="CYGWIN"
+#  cmake_man_dir_keyword="CYGWIN"
+  cmake_system_mingw=true
 else
-  cmake_system_cygwin=false
+#  cmake_system_cygwin=false
+  cmake_system_mingw=false
 fi
 
 # Determine whether this is a MinGW environment.

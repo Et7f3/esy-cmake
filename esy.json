@@ -9,6 +9,7 @@
             "CC": "#{os == 'windows' ? 'x86_64-w64-mingw32-gcc' : 'cc'}"
         },
         "build": [
+            "uname",
             "bash -c \"./bootstrap --prefix=#{self.install} || cat #{self.root}/Bootstrap.cmk/cmake_bootstrap.log\""
         ]
     }
