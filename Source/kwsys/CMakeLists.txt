@@ -190,8 +190,8 @@ if(KWSYS_USE_ConsoleBuf)
 endif()
 
 # Specify default 8 bit encoding for Windows
-if(NOT KWSYS_ENCODING_DEFAULT_CODEPAGE)
-  set(KWSYS_ENCODING_DEFAULT_CODEPAGE CP_ACP)
+if(NOT LOCALE_IDEFAULTCODEPAGE)
+  set(LOCALE_IDEFAULTCODEPAGE CP_ACP)
 endif()
 
 # Enable testing if building standalone.
@@ -1036,7 +1036,7 @@ endif()
 if(KWSYS_USE_Encoding)
   # Set default 8 bit encoding in "EndcodingC.c".
   set_property(SOURCE EncodingC.c EncodingCXX.cxx APPEND PROPERTY COMPILE_DEFINITIONS
-    KWSYS_ENCODING_DEFAULT_CODEPAGE=${KWSYS_ENCODING_DEFAULT_CODEPAGE})
+    LOCALE_IDEFAULTCODEPAGE=${LOCALE_IDEFAULTCODEPAGE})
 endif()
 
 #-----------------------------------------------------------------------------
@@ -1109,7 +1109,7 @@ if(KWSYS_STANDALONE OR CMake_SOURCE_DIR)
         set_property(SOURCE testConsoleBuf.cxx testConsoleBufChild.cxx PROPERTY COMPILE_FLAGS /utf-8)
       endif()
       set_property(SOURCE testConsoleBuf.cxx APPEND PROPERTY COMPILE_DEFINITIONS
-        KWSYS_ENCODING_DEFAULT_CODEPAGE=${KWSYS_ENCODING_DEFAULT_CODEPAGE})
+        LOCALE_IDEFAULTCODEPAGE=${LOCALE_IDEFAULTCODEPAGE})
     endif()
     if(KWSYS_USE_SystemInformation)
       set(KWSYS_CXX_TESTS ${KWSYS_CXX_TESTS} testSystemInformation.cxx)

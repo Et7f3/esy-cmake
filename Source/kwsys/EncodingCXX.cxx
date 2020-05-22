@@ -129,11 +129,11 @@ std::wstring Encoding::ToWide(const std::string& str)
   std::wstring wstr;
 #  if defined(_WIN32)
   const int wlength =
-    MultiByteToWideChar(KWSYS_ENCODING_DEFAULT_CODEPAGE, 0, str.data(),
+    MultiByteToWideChar(LOCALE_IDEFAULTCODEPAGE, 0, str.data(),
                         int(str.size()), nullptr, 0);
   if (wlength > 0) {
     wchar_t* wdata = new wchar_t[wlength];
-    int r = MultiByteToWideChar(KWSYS_ENCODING_DEFAULT_CODEPAGE, 0, str.data(),
+    int r = MultiByteToWideChar(LOCALE_IDEFAULTCODEPAGE, 0, str.data(),
                                 int(str.size()), wdata, wlength);
     if (r > 0) {
       wstr = std::wstring(wdata, wlength);
@@ -162,12 +162,12 @@ std::string Encoding::ToNarrow(const std::wstring& str)
   std::string nstr;
 #  if defined(_WIN32)
   int length =
-    WideCharToMultiByte(KWSYS_ENCODING_DEFAULT_CODEPAGE, 0, str.c_str(),
+    WideCharToMultiByte(LOCALE_IDEFAULTCODEPAGE, 0, str.c_str(),
                         int(str.size()), nullptr, 0, nullptr, nullptr);
   if (length > 0) {
     char* data = new char[length];
     int r =
-      WideCharToMultiByte(KWSYS_ENCODING_DEFAULT_CODEPAGE, 0, str.c_str(),
+      WideCharToMultiByte(LOCALE_IDEFAULTCODEPAGE, 0, str.c_str(),
                           int(str.size()), data, length, nullptr, nullptr);
     if (r > 0) {
       nstr = std::string(data, length);

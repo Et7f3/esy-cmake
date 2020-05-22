@@ -34,7 +34,7 @@
 // يونيكود
 static const WCHAR UnicodeInputTestString[] =
   L"\u064A\u0648\u0646\u064A\u0643\u0648\u062F!";
-static UINT TestCodepage = KWSYS_ENCODING_DEFAULT_CODEPAGE;
+static UINT TestCodepage = LOCALE_IDEFAULTCODEPAGE;
 
 static const DWORD waitTimeout = 10 * 1000;
 static STARTUPINFO startupInfo;
