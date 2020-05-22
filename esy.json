@@ -4,7 +4,7 @@
     "description": "cmake build system buildable with esy",
     "esy": {
         "buildEnv": {
-            "CFLAGS": "#{ $CFLAGS } -D'unsetenv(a)=SetEnvironmentVariable(a,NULL)'",
+            "CFLAGS": "#{ $CFLAGS } -Dunsetenv(a)=SetEnvironmentVariable(a,NULL)",
             "PATH": "#{ $PATH : '/usr/x86_64-w64-mingw32/sys-root/mingw/bin' }",
             "CXX": "#{os == 'windows' ? 'x86_64-w64-mingw32-g++' : 'c++'}",
             "CC": "#{os == 'windows' ? 'x86_64-w64-mingw32-gcc' : 'cc'}"
