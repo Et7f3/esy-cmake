@@ -4,6 +4,7 @@
     "description": "cmake build system buildable with esy",
     "esy": {
         "buildEnv": {
+            "CXX": "#{os == 'windows' ? 'x86_64-w64-mingw32-g++' : 'c++'}",
             "CC": "#{os == 'windows' ? 'x86_64-w64-mingw32-gcc' : 'cc'}"
         },
         "build": [
