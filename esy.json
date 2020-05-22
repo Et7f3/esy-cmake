@@ -3,6 +3,9 @@
     "version": "3.17.0",
     "description": "cmake build system buildable with esy",
     "esy": {
+        "buildEnv": {
+            "CC": "#{os == 'windows' ? 'x86_64-w64-mingw32-gcc' : 'cc'}"
+        },
         "build": [
             "./bootstrap --prefix=#{self.install}"
         ]
