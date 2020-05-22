@@ -9,7 +9,7 @@
 #  include <windows.h>
 
 unsigned int cmProcessOutput::defaultCodepage =
-  KWSYS_ENCODING_DEFAULT_CODEPAGE;
+  LOCALE_IDEFAULTCODEPAGE;
 #endif
 
 cmProcessOutput::Encoding cmProcessOutput::FindEncoding(
