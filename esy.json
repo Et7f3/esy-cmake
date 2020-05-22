@@ -1,0 +1,10 @@
+{
+    "name": "esy-cmake",
+    "version": "3.17.0",
+    "description": "cmake build system buildable with esy",
+    "esy": {
+        "build": [
+            "./bootstrap --prefix=#{self.install}"
+        ]
+    }
+}
